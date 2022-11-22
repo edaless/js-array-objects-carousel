@@ -1,3 +1,6 @@
+// Dato un array di oggetti letterali con: - url dell’immagine - titolo - descrizione
+// Creare un carosello come nella foto allegata.
+
 const images = [ 
     { 
         image: 'img/01.webp', 
