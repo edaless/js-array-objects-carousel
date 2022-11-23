@@ -1,4 +1,5 @@
-// Dato un array di oggetti letterali con: - url dell’immagine - titolo - descrizione
+// Dato un array di oggetti letterali con: 
+// - url dell’immagine - titolo - descrizione
 // Creare un carosello come nella foto allegata.
 
 const images = [ 
@@ -28,6 +29,65 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.', 
     } 
 ];
+
+
+const carosello = document.querySelector(".carosello");
+let index = 0;
+riempiCarosello (index);
+
+const avanti = document.querySelector(".avanti");
+avanti.addEventListener("click", function(){
+    if(index == (images.length - 1)){
+        index = 0;
+    }else{
+        index++;
+    };
+    riempiCarosello (index);
+});
+    
+const indietro = document.querySelector(".indietro");
+indietro.addEventListener("click", function(){
+    if(index == 0){
+        index = (images.length - 1);
+    }else{
+        index--;
+    };
+    riempiCarosello (index);
+});
+    
+
+
+
+function riempiCarosello (index){
+    const elemento = images[index];
+    carosello.innerHTML = 
+    `
+    <img src="${elemento["image"]}" alt="">
+    <div class="didascalia">
+        <div class="title">${elemento["title"]}</div>
+        <div class="text">${elemento["text"]}</div>
+    </div>
+    `;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

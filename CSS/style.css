@@ -25,11 +25,74 @@ body{
     align-items: center;
     justify-content: center;
 }
-
+:root{
+    /* var(--w-carosello) */
+    --w-carosello: 80vw;
+    /* var(--h-carosello) */
+    --h-carosello: calc(var(--w-carosello) * (897/2400));
+    
+}
+.finestra{
+    height: var(--h-carosello);
+    width: var(--w-carosello);
+    position: relative;
+    background-color: blue;
+}
 .carosello{
-    width: 300px;
-    height: 300px;
+    height: var(--h-carosello);
+    width: var(--w-carosello);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 
     background-color: brown;
 }
 
+img{
+    width: 100%;
+    height: auto;
+}
+
+.didascalia{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 85%;
+    padding: 20px;
+    text-align: end;
+    
+    color: white;
+
+    /* background-color: aqua; */
+}
+
+.title{
+    font-weight: bold;
+    font-size: 25px;
+}
+.text{
+    
+    font-size: 22px;
+}
+
+:root{
+    /* var(--w-tasto) */
+    --w-tasto: 40px;    
+}
+.tasto{
+    position: absolute;
+    width: var(--w-tasto);
+    height: var(--w-tasto);
+    top: calc((var(--h-carosello) - var(--w-tasto)) / 2);
+    /* (sono centrati senza flex) */
+}
+.avanti{
+    right: 0;
+    background-color: rgb(43, 226, 198);
+}
+.indietro{
+    left: 0;
+    background-color: blueviolet;
+}
